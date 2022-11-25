@@ -67,3 +67,4 @@ console.log ('Hello from the js file');
 // the product. Example: the product represented with dog-duck.jpg 
 // should be displayed to the user as exactly “dog-duck” when 
 // the results are shown.
+
