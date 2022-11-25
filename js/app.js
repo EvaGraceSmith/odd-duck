@@ -196,7 +196,7 @@ new Ducks('pen', '../img/pen.jpg');
 new Ducks('pet-sweep', '../img/pet-sweep.jpg');
 new Ducks('scissors', '../img/scissors.jpg');
 new Ducks('shark', '../img/shark.jpg');
-new Ducks('sweep', '../img/sweep.jpg');
+new Ducks('sweep', '../img/sweep.png');
 new Ducks('tauntaun', '../img/tauntaun.jpg');
 new Ducks('unicorn', '../img/unicorn.jpg');
 
