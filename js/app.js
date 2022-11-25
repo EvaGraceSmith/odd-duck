@@ -68,3 +68,53 @@ console.log ('Hello from the js file');
 // should be displayed to the user as exactly “dog-duck” when 
 // the results are shown.
 
+// global variable
+Ducks.allDucksArray = [];
+let duckContainer = document.querySelector('section');
+let resultButton = document.querySelector('section + div');
+let image1 = document.querySelector('section img:first-child');
+let image2 = document.querySelector('section img:nth-child(2)');
+let image3 = document.querySelector('section img:nth-child(3)');
+console.log(pizzaContainer, resultButton, image1, image2, image3,);
+
+let clicks = 0;
+let maxClicks = 10;
+console.log('click tracking', {clicks, maxClicks});
+
+//constructor functions    src refers to the <img src="assets/images/brickOvenPizza.jpg" />
+function Ducks(name, src){
+    this.name = name;
+    this.src = src;
+    //times shown
+    this.views = 0;
+    //times clicked on
+    this.click = 0;
+
+      //   As we create new instances of our pizza objects we can push those into array using the 'this' and the .push()
+  // built in array method
+  Ducks.allDucksArray.push(this);
+
+}
+
+console.log('do we have Ducks? ' Ducks.allDucksArray);
+
+// function helper for randomization
+function getRandomNumber(){
+    return Math.floor(Math.random() * Ducks.allDucksArray.length);
+}
+
+//function to render our pizzas
+function renderDucks(){
+    let duck1 = getRandomNumber();
+    let duck2 = getRandomNumber();
+    let duck3 = getRandomNumber();
+    // console.log(duck1,duck2,duck3);
+  
+    while(duck1 === duck2){
+      duck2 = getRandomNumber();
+    }
+    // console.log(duck1,duck2);
+
+
+    
+}
