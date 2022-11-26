@@ -1,6 +1,6 @@
-font-family: 'Averia Libre', cursive;
+/* font-family: 'Averia Libre', cursive;
 font-family: 'Luckiest Guy', cursive;
-
+royal blue color: #1818A4; */
 
 body{
     background-color: rgb(14, 80, 167);
@@ -23,25 +23,30 @@ body{
 
 
   .grid-flex{
-    background-color: #1818A4;
-    display: inline-flex
+    background-color:  rgb(14, 80, 167);
+    display: inline-flex;
+    height: 1400px;
+
   }
 
   aside{
-    width: 200px;
     background-color: #FFD351;
     margin: 20px;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    height: max-content;
+    width: max-content;
+    min-width: 200px;
+    min-height: 400px;
   }
 
 button{
-    background-color:  #1818A4;
+    background-color:   rgb(14, 80, 167);
     align-items: center;
     justify-content: center;
     color: whitesmoke;
-    font-family: 'Luckiest Guy', cursive;
+    font-family: 'Averia Libre', cursive;
     padding: 15px;
     padding-top: 17px;
     border: 10px;
@@ -49,19 +54,20 @@ button{
     border-radius: 10px;
     font-size: 16px;
     margin-top: 20px;
-    margin-left: 30px; 
-    transition-duration: 0.4s;
+    margin-left: 35px; 
+    transition-duration: 0.1s;
    
 }
 
 
 button:hover {
-background-color: rgb(80, 142, 223);
-color: whitesmoke;
+background-color:  rgb(111, 150, 199);
+color: rgb(8, 8, 8);
 }
 
 ul{
     list-style: disc;
+    list-style-position: inside;
     font-family: 'Averia Libre', cursive;
     font-size: 14;
     line-height: 1.5;
