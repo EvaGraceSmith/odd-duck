@@ -1,3 +1,163 @@
+font-family: 'Averia Libre', cursive;
+font-family: 'Luckiest Guy', cursive;
+
+
 body{
-    background-color: azure;
+    background-color: rgb(14, 80, 167);
 }
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  header{
+    background-color: rgb(80, 142, 223);
+    height: 150px;
+    font-family: 'Luckiest Guy', cursive;
+    color: whitesmoke;
+    font-size: 60px;
+   text-align: center;
+
+  }
+
+
+  .grid-flex{
+    background-color: #1818A4;
+    display: inline-flex
+  }
+
+  aside{
+    width: 200px;
+    background-color: #FFD351;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+button{
+    background-color:  #1818A4;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 15px;
+    border: 10px;
+    border-color: aliceblue;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 30px;
+
+
+    
+   
+}
+  .right-frame{
+display: flex;
+flex-direction: column;
+width: 1100px;
+color: whitesmoke;
+  }
+
+  .voting-photos{
+display: flex;
+max-height: 400px;
+  }
+
+  .voting-photos img{
+    width: 300px;
+    padding: 10px;
+    margin: 20px;
+    background-color: #EAAF00;
+  }
+  
+article{
+    background-color: #FFD351;
+    padding: 10px;
+    margin: 20px;
+    width: 980px;
+    font-family: 'Averia Libre', cursive;
+    color:black
+
+}
+
+  /* body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-color: rgb(244,77,19); */
+    /* color: rgb(101, 48, 10);
+  } */ 
+  
+  /* main{
+    width: 1024px;
+    margin: 3rem auto;
+    display: grid;
+    grid-template-columns: 250px 4fr;
+    grid-template-rows: 10rem 10rem 20rem 40%;
+  }
+   */
+  /* #siteLogo {
+    width: 250px;
+    z-index: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+   */
+  /* h1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 5rem;
+    line-height: .8;
+    margin: 3rem 0 1rem;
+  } */
+  
+  /* section {
+    background-color: rgb(241, 149, 106);
+    padding: 2rem;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-between;
+  } */
+  
+  /* section img {
+    width:  460px;
+    max-height: 26rem;
+    border: 5px solid transparent;
+  }
+  
+  
+  section img:hover {
+    border: 5px solid rgb(227, 241, 106)
+  } */
+  
+  /* section.no-voting img:hover{
+    border: 5px solid transparent;
+    cursor: none;
+  }
+   */
+  
+  /* ul{
+  background-color: aliceblue;
+  margin: 1rem;
+  }
+  li{
+  margin: .5rem;
+  } */
+  
+  /* section + div {
+    background-color: rgb(20, 168, 217);
+    color: aliceblue;
+    font-size: 2rem;
+    padding: .5rem 1rem;
+    margin: 1rem;
+    height: max-content;
+    width: max-content;
+  
+  } */
