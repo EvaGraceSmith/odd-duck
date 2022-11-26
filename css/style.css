@@ -33,6 +33,7 @@ body{
     margin: 20px;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
   }
 
 button{
@@ -42,17 +43,31 @@ button{
     color: whitesmoke;
     font-family: 'Luckiest Guy', cursive;
     padding: 15px;
+    padding-top: 17px;
     border: 10px;
     border-color: aliceblue;
     border-radius: 10px;
     font-size: 16px;
     margin-top: 20px;
-    margin-left: 30px;
-
-
-    
+    margin-left: 30px; 
+    transition-duration: 0.4s;
    
 }
+
+
+button:hover {
+background-color: rgb(80, 142, 223);
+color: whitesmoke;
+}
+
+ul{
+    list-style: disc;
+    font-family: 'Averia Libre', cursive;
+    font-size: 14;
+    line-height: 1.5;
+    margin: 10px;
+}
+
   .right-frame{
 display: flex;
 flex-direction: column;
@@ -70,6 +85,11 @@ max-height: 400px;
     padding: 10px;
     margin: 20px;
     background-color: #EAAF00;
+    transition-duration: 0.4s;
+  }
+
+img:hover{
+    background-color: aliceblue(80, 142, 223);
   }
   
 article{

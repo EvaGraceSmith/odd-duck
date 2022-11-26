@@ -71,7 +71,7 @@ console.log ('Hello from the js file');
 // global variable
 Ducks.allDucksArray = [];
 let ducksContainer = document.querySelector('section');
-let resultButton = document.querySelector('section + div');
+let resultButton = document.querySelector('button');
 let image1 = document.querySelector('section img:first-child');
 let image2 = document.querySelector('section img:nth-child(2)');
 let image3 = document.querySelector('section img:nth-child(3)');
@@ -130,7 +130,7 @@ function renderDucks(){
   //update alt attribute
   image1.alt = Ducks.allDucksArray[duck1].name;
   image2.alt = Ducks.allDucksArray[duck2].name;
-  image2.alt = Ducks.allDucksArray[duck3].name;
+  image3.alt = Ducks.allDucksArray[duck3].name;
   //times shown
   Ducks.allDucksArray[duck1].views++;
   Ducks.allDucksArray[duck2].views++;
@@ -173,7 +173,7 @@ function renderResults(){
     let ul = document.querySelector('ul');
     for(let i = 0; i < Ducks.allDucksArray.length; i++){
       let li = document.createElement('li');
-      li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and were clicked on ${Ducks.allDucksArray[i].click} times`;
+      li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and was clicked on ${Ducks.allDucksArray[i].click} times`;
       ul.appendChild(li);
     }
   
@@ -181,24 +181,24 @@ function renderResults(){
 
   //duck objects and call the constructor with the new operator
 
-new Ducks('bag', '../img/bag.jpg');
-new Ducks('banana', '../img/banana.jpg');
-new Ducks('bathroom', '../img/bathroom.jpg');
-new Ducks('boots', '../img/boots.jpg');
-new Ducks('breakfast', '../img/breakfast.jpg');
-new Ducks('bubblegum', '../img/bubblegum.jpg');
-new Ducks('chair', '../img/chair.jpg');
-new Ducks('cthulhu', '../img/cthulhu.jpg');
+new Ducks('The bag', '../img/bag.jpg');
+new Ducks('The banana', '../img/banana.jpg');
+new Ducks('The bathroom', '../img/bathroom.jpg');
+new Ducks('The boots', '../img/boots.jpg');
+new Ducks('The breakfast', '../img/breakfast.jpg');
+new Ducks('The bubblegum', '../img/bubblegum.jpg');
+new Ducks('The chair', '../img/chair.jpg');
+new Ducks('The cthulhu', '../img/cthulhu.jpg');
 
-new Ducks('dog-duck', '../img/dog-duck.jpg');
-new Ducks('dragon', '../img/dragon.jpg');
-new Ducks('pen', '../img/pen.jpg');
-new Ducks('pet-sweep', '../img/pet-sweep.jpg');
-new Ducks('scissors', '../img/scissors.jpg');
-new Ducks('shark', '../img/shark.jpg');
-new Ducks('sweep', '../img/sweep.png');
-new Ducks('tauntaun', '../img/tauntaun.jpg');
-new Ducks('unicorn', '../img/unicorn.jpg');
+new Ducks('The dog-duck', '../img/dog-duck.jpg');
+new Ducks('The dragon', '../img/dragon.jpg');
+new Ducks('The pen', '../img/pen.jpg');
+new Ducks('The pet-sweep', '../img/pet-sweep.jpg');
+new Ducks('The scissors', '../img/scissors.jpg');
+new Ducks('The shark', '../img/shark.jpg');
+new Ducks('The sweep', '../img/sweep.png');
+new Ducks('The tauntaun', '../img/tauntaun.jpg');
+new Ducks('The unicorn', '../img/unicorn.jpg');
 
 //call all functions
 renderDucks();
