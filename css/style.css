@@ -18,6 +18,7 @@ body{
     color: whitesmoke;
     font-size: 60px;
    text-align: center;
+   text-shadow: 2px 2px 4px #000000;
 
   }
 
@@ -39,6 +40,7 @@ body{
     width: max-content;
     min-width: 200px;
     min-height: 400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
   }
 
 button{
@@ -55,6 +57,7 @@ button{
     font-size: 16px;
     margin-top: 20px;
     margin-left: 35px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
     transition-duration: 0.1s;
    
 }
@@ -91,6 +94,7 @@ max-height: 400px;
     padding: 10px;
     margin: 20px;
     background-color: #EAAF00;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
     transition-duration: 0.4s;
   }
 
@@ -104,7 +108,8 @@ article{
     margin: 20px;
     width: 980px;
     font-family: 'Averia Libre', cursive;
-    color:black
+    color:black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 
 }
 
