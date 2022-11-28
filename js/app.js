@@ -114,23 +114,23 @@ function renderResults(){
 
   //duck objects and call the constructor with the new operator
 
-new Ducks('The bag', '../img/bag.jpg');
+new Ducks('The luggage', '../img/bag.jpg');
 new Ducks('The banana', '../img/banana.jpg');
-new Ducks('The bathroom', '../img/bathroom.jpg');
+new Ducks('The bathroom stand', '../img/bathroom.jpg');
 new Ducks('The boots', '../img/boots.jpg');
-new Ducks('The breakfast', '../img/breakfast.jpg');
+new Ducks('The breakfast maker', '../img/breakfast.jpg');
 new Ducks('The bubblegum', '../img/bubblegum.jpg');
 new Ducks('The chair', '../img/chair.jpg');
-new Ducks('The cthulhu', '../img/cthulhu.jpg');
+new Ducks('The cthulhu monster', '../img/cthulhu.jpg');
 
 new Ducks('The dog-duck', '../img/dog-duck.jpg');
 new Ducks('The dragon', '../img/dragon.jpg');
 new Ducks('The pen', '../img/pen.jpg');
 new Ducks('The pet-sweep', '../img/pet-sweep.jpg');
-new Ducks('The scissors', '../img/scissors.jpg');
+new Ducks('The pizza scissors', '../img/scissors.jpg');
 new Ducks('The shark', '../img/shark.jpg');
 new Ducks('The sweep', '../img/sweep.png');
-new Ducks('The tauntaun', '../img/tauntaun.jpg');
+new Ducks('The tauntaun bag', '../img/tauntaun.jpg');
 new Ducks('The unicorn', '../img/unicorn.jpg');
 
 //call all functions
