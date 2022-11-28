@@ -95,7 +95,7 @@ function handleDucksClick(event){
 ducksContainer.removeEventListener('click', handleDucksClick);
     //enable the button to see the results
     resultButton.addEventListener('click', renderResults);
-    ducksContainer.className = 'no-voting';
+    // ducksContainer.className = 'no-voting';
   } else {
     renderDucks();
   }
