@@ -15,7 +15,7 @@ let clicks = 0;
 let maxClicks = 25;
 console.log('click tracking', {clicks, maxClicks});
 
-//constructor functions    src refers to the <img src="../img/bag.jpg" />
+//constructor functions    src refers to the <img src="img/bag.jpg" />
 function Ducks(name, src){
     this.name = name;
     this.src = src;
@@ -43,6 +43,12 @@ function renderDucks(){
     let duck2 = getRandomNumber();
     let duck3 = getRandomNumber();
     // console.log(duck1,duck2,duck3);
+
+
+    // Update your algorithm to randomly generate three unique 
+    // product images from the images directory.
+// Update your algorithm so that new products are generated, 
+// confirm that these products are not duplicates from the immediate previous set.
   
     while(duck1 === duck3){
         duck3 = getRandomNumber();
@@ -54,6 +60,11 @@ function renderDucks(){
 
 
      console.log(duck1,duck2);
+
+    //  Using ChartJS (imported from CDN), display the vote totals and the number of times a product was 
+    //  viewed in a bar chart format. (hint: don’t forget about the <canvas> tags)
+// Place the bar chart in the section located beneath your three product images
+// The bar charts should only appear after all voting data has been collected.
 
       //capture some data about images so that we can track the data in our objects
   //update the src for the new image to be seen after each click  ../img/bag.jpg                   
@@ -90,7 +101,7 @@ function handleDucksClick(event){
       }
     }
 
-      //do we have max attempts completed 10 votes
+      //do we have max attempts completed 25 votes
   if(clicks === maxClicks){
 ducksContainer.removeEventListener('click', handleDucksClick);
     //enable the button to see the results
@@ -114,24 +125,24 @@ function renderResults(){
 
   //duck objects and call the constructor with the new operator
 
-new Ducks('The luggage', '../img/bag.jpg');
-new Ducks('The banana', '../img/banana.jpg');
-new Ducks('The bathroom stand', '../img/bathroom.jpg');
-new Ducks('The boots', '../img/boots.jpg');
-new Ducks('The breakfast maker', '../img/breakfast.jpg');
-new Ducks('The bubblegum', '../img/bubblegum.jpg');
-new Ducks('The chair', '../img/chair.jpg');
-new Ducks('The cthulhu monster', '../img/cthulhu.jpg');
+new Ducks('The luggage', 'img/bag.jpg');
+new Ducks('The banana', 'img/banana.jpg');
+new Ducks('The bathroom stand', 'img/bathroom.jpg');
+new Ducks('The boots', 'img/boots.jpg');
+new Ducks('The breakfast maker', 'img/breakfast.jpg');
+new Ducks('The bubblegum', 'img/bubblegum.jpg');
+new Ducks('The chair', 'img/chair.jpg');
+new Ducks('The cthulhu monster', 'img/cthulhu.jpg');
 
-new Ducks('The dog-duck', '../img/dog-duck.jpg');
-new Ducks('The dragon', '../img/dragon.jpg');
-new Ducks('The pen', '../img/pen.jpg');
-new Ducks('The pet-sweep', '../img/pet-sweep.jpg');
-new Ducks('The pizza scissors', '../img/scissors.jpg');
-new Ducks('The shark', '../img/shark.jpg');
-new Ducks('The sweep', '../img/sweep.png');
-new Ducks('The tauntaun bag', '../img/tauntaun.jpg');
-new Ducks('The unicorn', '../img/unicorn.jpg');
+new Ducks('The dog-duck', 'img/dog-duck.jpg');
+new Ducks('The dragon', 'img/dragon.jpg');
+new Ducks('The pen', 'img/pen.jpg');
+new Ducks('The pet-sweep', 'img/pet-sweep.jpg');
+new Ducks('The pizza scissors', 'img/scissors.jpg');
+new Ducks('The shark', 'img/shark.jpg');
+new Ducks('The sweep', 'img/sweep.png');
+new Ducks('The tauntaun bag', 'img/tauntaun.jpg');
+new Ducks('The unicorn', 'img/unicorn.jpg');
 
 //call all functions
 renderDucks();
