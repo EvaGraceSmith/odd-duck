@@ -14,6 +14,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+        <!-- <script src="js/ducks.js"></script> -->
+                <script src="js/duck.js" async defer></script>
+
     </head>
     <body>
         <header>
@@ -43,7 +47,7 @@
             <section class="grid-flex">
                 <aside class="Results">
                     <!-- click on the view results to see a list of voting results in a list  -->
-                    <button>View Results</button>
+                    <!-- <button>View Results</button> -->
                           <!-- here is where we are going to render the list in the ul  -->
                     <ul>
                 
@@ -59,9 +63,15 @@
                             <!-- image3 -->
                             <img>
                         </section>
-
+<!-- This article will probably need to be reclassified as a div, 
+and my current code uses a button not a div -->
                         <article>
-                            <p>Rooster celery pineapples fertilizer, a melon chirp pets in. Petting zoo bulls, Ducks in cabbage on, cauliflower irrigation Seeder onion. Lettus gobblers pens, radish on kidney beans, llamas pick up truck. Mouse soybeans sweet corn hogs llamas or oink oink wind. Shovels at rakes plows. Fertilizer buzz, purr meow cheep chinchillas squeak, seeds maple syrup worms.</p>
+                            <button>View Results</button>
+                            <ul></ul>
+                            <div>
+                                <canvas id="myChart"></canvas>
+                            </div>
+                            <!-- <p>Rooster celery pineapples fertilizer, a melon chirp pets in. Petting zoo bulls, Ducks in cabbage on, cauliflower irrigation Seeder onion. Lettus gobblers pens, radish on kidney beans, llamas pick up truck. Mouse soybeans sweet corn hogs llamas or oink oink wind. Shovels at rakes plows. Fertilizer buzz, purr meow cheep chinchillas squeak, seeds maple syrup worms.</p> -->
                         </article>
                 </section>
             </section>
@@ -70,6 +80,6 @@
         <footer></footer>
 
         
-        <script src="js/app.js" async defer></script>
+        <!-- <script src="js/app.js" async defer></script> -->
     </body>
 </html>
