@@ -7,8 +7,6 @@ let clicks = 0;
 let maxClicks =25;
 
 
-// @param {string}
-// @param {string}
 
 function Ducks(name, src){
     this.name = name;
@@ -18,7 +16,7 @@ function Ducks(name, src){
     //times clicked on
     this.click = 0;
 
-      //   As we create new instances of our duck objects we can push those into array using the 'this' and the .push()
+ //   As we create new instances of our duck objects we can push those into array using the 'this' and the .push()
   // built in array method
   Ducks.allDucksArray.push(this);
 
@@ -67,7 +65,7 @@ function renderResults(){
   }
 }
 
-// Draw a chart with the goat data.
+// Draw a chart with the duck data.
 
 function renderChart(){
   console.log('In renderChart()');
@@ -134,7 +132,8 @@ const myChart = new Chart (canvasChart, config);
     let image3 = document.querySelector('section img:nth-child(3)');
     console.log(ducksContainer, resultButton, image1, image2, image3,);
 
-    // instantiate Ducks 
+    // An instance of an object can be declared by giving it a unique name that can be used in a program. 
+    // This process is known as instantiation. 
 
 new Ducks('The luggage', 'img/bag.jpg');
 new Ducks('The banana', 'img/banana.jpg');
@@ -156,7 +155,6 @@ new Ducks('The tauntaun bag', 'img/tauntaun.jpg');
 new Ducks('The unicorn', 'img/unicorn.jpg');
 
 
-    // Set any event handlers
     //add our event listener to run our handleClick()
 ducksContainer.addEventListener('click', handleDucksClick);
 //call all functions
