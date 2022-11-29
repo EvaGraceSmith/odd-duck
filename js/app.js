@@ -125,7 +125,7 @@ function renderResults(){
 
   //duck objects and call the constructor with the new operator
 
-new Ducks('The luggage', 'img/bag.jpg');
+new Ducks('The luggage', '../img/bag.jpg');
 new Ducks('The banana', 'img/banana.jpg');
 new Ducks('The bathroom stand', 'img/bathroom.jpg');
 new Ducks('The boots', 'img/boots.jpg');
