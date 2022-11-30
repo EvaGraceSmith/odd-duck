@@ -121,6 +121,7 @@ color: whitesmoke;
   .prelude{
 display: flex;
 max-height: 350px;
+z-index:2;
   }
 
 
@@ -131,9 +132,9 @@ max-height: 350px;
     border: 10px;
     border-style: solid;
     border-color: #EAAF00;
-    margin: 20px;  
+    margin: 20px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    /* visibility: hidden; */
+    visibility: hidden;
   }
 
   .voting-photos{
@@ -154,6 +155,7 @@ max-height: 350px;
   .conclude{
     display: flex;
     max-height: 350px;
+    z-index:3; 
       }
   .conclude div{
     background-color: white;
@@ -162,9 +164,10 @@ max-height: 350px;
     border: 10px;
     border-style: solid;
     border-color: #EAAF00;
-    margin: 20px;  
+    margin: 20px; 
+    z-index:3; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    visibility: hidden;
+    /* visibility: hidden; */
   }
 
 img:hover{
