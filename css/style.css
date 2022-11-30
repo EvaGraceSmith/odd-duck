@@ -66,6 +66,14 @@ line-height: 1.5;
 text-align: center;
 
   }
+  h2{
+    color: rgb(80, 142, 223);
+    font-family: 'Averia Libre', cursive;
+    font-size: 50px;
+margin: 15px;
+text-align: center;
+text-shadow: 2px 2px 4px #000000;
+  }
 
 button{
     background-color:   rgb(14, 80, 167);
