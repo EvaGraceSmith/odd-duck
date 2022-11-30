@@ -5,6 +5,9 @@ let duckContainer;
 let allDucksArray;
 let clicks = 0;
 let maxClicks =25;
+let previousimage1=1;
+let previousimage2=1;
+let previousimage3=1;
 
 
 
@@ -27,17 +30,19 @@ function getRandomNumber(){
 }
 
 function renderDucks(){
-  let duck1 = getRandomNumber();
-  let duck2 = getRandomNumber();
-  let duck3 = getRandomNumber();
-  // console.log(duck1,duck2,duck3);
-  while(duck1 === duck3){
-    duck3 = getRandomNumber();
-  }
-
-  while(duck1 === duck2 || duck3 === duck2){
-    duck2 = getRandomNumber();
-  }
+    let duck1=getRandomNumber();
+    while (duck1 === previousimage1 || duck1 === previousimage2 || duck1 === previousimage3) {
+      duck1 = getRandomNumber();
+    }
+    let duck2 = getRandomNumber();
+    let duck3 = getRandomNumber();
+    // console.log(duck1,duck2,duck3);
+    while(duck1 === duck3|| duck3 === previousimage2 || duck3 === previousimage3){
+      duck3 = getRandomNumber();
+    }
+    while(duck1 === duck2 || duck3 === duck2){
+      duck2 = getRandomNumber();
+    }
 
   // confirm that these products are not duplicates from the immediate previous set.
   image1.src = Ducks.allDucksArray[duck1].src;
@@ -52,6 +57,9 @@ function renderDucks(){
   Ducks.allDucksArray[duck2].views++;
   Ducks.allDucksArray[duck3].views++;
 
+  previousimage1 = duck1;
+  previousimage2 = duck2;
+  previousimage3 = duck3;
 }//closes our renderDucks function
 
 
