@@ -5,6 +5,9 @@ let duckContainer;
 let allDucksArray;
 let clicks = 0;
 let maxClicks =25;
+let previousimage1=1;
+let previousimage2=1;
+let previousimage3=1;
 
 
 
@@ -27,17 +30,21 @@ function getRandomNumber(){
 }
 
 function renderDucks(){
-  let duck1 = getRandomNumber();
-  let duck2 = getRandomNumber();
-  let duck3 = getRandomNumber();
-  // console.log(duck1,duck2,duck3);
-  while(duck1 === duck3){
-    duck3 = getRandomNumber();
-  }
+    let duck1=getRandomNumber();
+    while (duck1 === previousimage1 || duck1 === previousimage2 || duck1 === previousimage3) {
+      duck1 = getRandomNumber();
+    }
+    let duck2 = getRandomNumber();
+    let duck3 = getRandomNumber();
+    // console.log(duck1,duck2,duck3);
+    while(duck1 === duck3|| duck3 === previousimage2 || duck3 === previousimage3){
+      duck3 = getRandomNumber();
+    }
+    while(duck1 === duck2 || duck3 === duck2){
+      duck2 = getRandomNumber();
+    }
 
-  while(duck1 === duck2 || duck3 === duck2){
-    duck2 = getRandomNumber();
-  }
+  // confirm that these products are not duplicates from the immediate previous set.
   image1.src = Ducks.allDucksArray[duck1].src;
   image2.src = Ducks.allDucksArray[duck2].src;
   image3.src = Ducks.allDucksArray[duck3].src;
@@ -50,6 +57,9 @@ function renderDucks(){
   Ducks.allDucksArray[duck2].views++;
   Ducks.allDucksArray[duck3].views++;
 
+  previousimage1 = duck1;
+  previousimage2 = duck2;
+  previousimage3 = duck3;
 }//closes our renderDucks function
 
 
@@ -57,12 +67,15 @@ function renderDucks(){
 function renderResults(){
   console.log('In renderResults()');
   let ul = document.querySelector('ul');
-  for(let i = 0; i < Ducks.allDucksArray.length; i++){
-    let duck = allDucksArray[i];
-    let li = document.createElement('li');
-    li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and was clicked on ${Ducks.allDucksArray[i].click} times`;
-    ul.appendChild(li);
-  }
+//   for(let i = 0; i < Ducks.allDucksArray.length; i++){
+//     let duck = allDucksArray[i];
+//     let li = document.createElement('li');
+//     li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and was clicked on ${Ducks.allDucksArray[i].click} times`;
+//     ul.appendChild(li);
+   
+//   }
+  renderChart();
+  resultButton.textContent='Results';
 }
 
 // Draw a chart with the duck data.
@@ -126,6 +139,7 @@ const myChart = new Chart (canvasChart, config);
     // Get initial references to HTML elements
     Ducks.allDucksArray = [];
     let ducksContainer = document.querySelector('section');
+    let textContainer = document.querySelector('aside h2');
     let resultButton = document.querySelector('button');
     let image1 = document.querySelector('section img:first-child');
     let image2 = document.querySelector('section img:nth-child(2)');
@@ -153,7 +167,8 @@ new Ducks('The shark', 'img/shark.jpg');
 new Ducks('The sweep', 'img/sweep.png');
 new Ducks('The tauntaun bag', 'img/tauntaun.jpg');
 new Ducks('The unicorn', 'img/unicorn.jpg');
-
+new Ducks('The watering can', 'img/water-can.jpg');
+new Ducks('The wine glass', 'img/wine-glass.jpg');
 
     //add our event listener to run our handleClick()
 ducksContainer.addEventListener('click', handleDucksClick);
@@ -161,12 +176,22 @@ ducksContainer.addEventListener('click', handleDucksClick);
 renderDucks();
 
 
+function handleDucksIconClick(event)
+{
+  let ding = new Audio('duck.mp3');
+  ding.play();
+}
+
+let ducksIcon = document.querySelector('.odd-duck-logo');
+
+ducksIcon.addEventListener('click', handleDucksIconClick);
+
+
 function handleDucksClick(event){
     console.log('we made it to the click: ', event);
     // Test to see if we have clicked an image
-    if(event.target === ducksContainer){
-      alert('please click on a product.');
-    }
+    if(event.target === image1 || event.target === image2 || event.target === image3){
+
     //how many time they vote total clicks
     clicks++;
     // We don't know which random duck was clicked, so loop through them
@@ -178,9 +203,17 @@ function handleDucksClick(event){
         //this.click from duck object
         // update the ducks individual clicks
         Ducks.allDucksArray[i].click++;
+        let countdown = 25 - clicks;
+        textContainer.textContent =`${countdown}`;
+
         break;
       }
     }
+}
+        else {      
+            alert('please click on a product.');
+        }
+
 
       //do we have max attempts completed 25 votes
   if(clicks === maxClicks){
@@ -188,7 +221,7 @@ ducksContainer.removeEventListener('click', handleDucksClick);
     //enable the button to see the results
     resultButton.addEventListener('click', renderResults);
     // ducksContainer.className = 'no-voting';
-    renderChart();
+    resultButton.textContent='View Results';
   } else {
     renderDucks();
   }

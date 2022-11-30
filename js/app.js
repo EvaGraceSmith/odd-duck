@@ -48,7 +48,6 @@ function renderDucks(){
     // Update your algorithm to randomly generate three unique 
     // product images from the images directory.
 // Update your algorithm so that new products are generated, 
-// confirm that these products are not duplicates from the immediate previous set.
   
     while(duck1 === duck3){
         duck3 = getRandomNumber();
