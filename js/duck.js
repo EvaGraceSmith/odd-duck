@@ -59,12 +59,14 @@ function renderDucks(){
 function renderResults(){
   console.log('In renderResults()');
   let ul = document.querySelector('ul');
-  for(let i = 0; i < Ducks.allDucksArray.length; i++){
-    let duck = allDucksArray[i];
-    let li = document.createElement('li');
-    li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and was clicked on ${Ducks.allDucksArray[i].click} times`;
-    ul.appendChild(li);
-  }
+//   for(let i = 0; i < Ducks.allDucksArray.length; i++){
+//     let duck = allDucksArray[i];
+//     let li = document.createElement('li');
+//     li.textContent = `${Ducks.allDucksArray[i].name} had ${Ducks.allDucksArray[i].views} views and was clicked on ${Ducks.allDucksArray[i].click} times`;
+//     ul.appendChild(li);
+   
+//   }
+  renderChart();
 }
 
 // Draw a chart with the duck data.
@@ -206,7 +208,7 @@ ducksContainer.removeEventListener('click', handleDucksClick);
     //enable the button to see the results
     resultButton.addEventListener('click', renderResults);
     // ducksContainer.className = 'no-voting';
-    renderChart();
+
   } else {
     renderDucks();
   }
