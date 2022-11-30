@@ -182,9 +182,8 @@ ducksIcon.addEventListener('click', handleDucksIconClick);
 function handleDucksClick(event){
     console.log('we made it to the click: ', event);
     // Test to see if we have clicked an image
-    if(event.target === ducksContainer){
-      alert('please click on a product.');
-    }
+    if(event.target === image1 || event.target === image2 || event.target === image3){
+
     //how many time they vote total clicks
     clicks++;
     // We don't know which random duck was clicked, so loop through them
@@ -202,6 +201,11 @@ function handleDucksClick(event){
         break;
       }
     }
+}
+        else {      
+            alert('please click on a product.');
+        }
+
 
       //do we have max attempts completed 25 votes
   if(clicks === maxClicks){
