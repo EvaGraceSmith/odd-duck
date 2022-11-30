@@ -67,6 +67,7 @@ function renderResults(){
    
 //   }
   renderChart();
+  resultButton.textContent='Results';
 }
 
 // Draw a chart with the duck data.
@@ -208,7 +209,7 @@ ducksContainer.removeEventListener('click', handleDucksClick);
     //enable the button to see the results
     resultButton.addEventListener('click', renderResults);
     // ducksContainer.className = 'no-voting';
-
+    resultButton.textContent='View Results';
   } else {
     renderDucks();
   }
