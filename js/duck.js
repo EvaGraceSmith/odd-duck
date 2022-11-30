@@ -128,6 +128,7 @@ const myChart = new Chart (canvasChart, config);
     // Get initial references to HTML elements
     Ducks.allDucksArray = [];
     let ducksContainer = document.querySelector('section');
+    let textContainer = document.querySelector('aside p');
     let resultButton = document.querySelector('button');
     let image1 = document.querySelector('section img:first-child');
     let image2 = document.querySelector('section img:nth-child(2)');
@@ -192,6 +193,9 @@ function handleDucksClick(event){
         //this.click from duck object
         // update the ducks individual clicks
         Ducks.allDucksArray[i].click++;
+        let countdown = 25 - clicks;
+        textContainer.textContent =`Help us decide which Odd Duck to bring into development next! Please vote by clicking on the image you like best! You have ${countdown} chances to vote. Click on results to see your choices!`;
+
         break;
       }
     }
