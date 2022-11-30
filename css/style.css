@@ -120,25 +120,36 @@ color: whitesmoke;
 
   .prelude{
 display: flex;
+/* display: none; */
 max-height: 350px;
 z-index:2;
   }
 
-
   .prelude div{
-    background-color: white;
-    width: 280px;
+    background-color:  #EAAF00;
+    color: #0E50A7;
+    text-align: center;
+text-shadow: 1px 1px 2px #000000;
+/* padding-top: 50px; */
+width: 280px;
     height: 305px;
     border: 10px;
     border-style: solid;
-    border-color: #EAAF00;
+    border-color: white;
     margin: 20px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    visibility: hidden;
   }
+  .prelude div p{
+    padding-top: 15px;
+    font-family: 'Averia Libre', cursive;
+    font-size: 50px;
+
+  }
+
 
   .voting-photos{
     display: flex;
+    display: none;
     max-height: 350px;
       }
 
@@ -149,16 +160,21 @@ z-index:2;
     margin: 20px;
     background-color: #EAAF00;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    visibility: hidden;
   }
 
   .conclude{
-    display: flex;
+    display: none;
+    /* display: flex; */
     max-height: 350px;
     z-index:3; 
       }
   .conclude div{
     background-color: white;
+    color: #0E50A7;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 50px;
+    text-align: center;
+text-shadow: 1px 1px 2px #000000;
     width: 280px;
     height: 305px;
     border: 10px;
@@ -167,8 +183,14 @@ z-index:2;
     margin: 20px; 
     z-index:3; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    /* visibility: hidden; */
   }
+  .conclude div p{
+    padding-top: 22px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 50px;
+
+  }
+
 
 img:hover{
     background-color: aliceblue(80, 142, 223);
