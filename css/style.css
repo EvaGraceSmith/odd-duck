@@ -77,6 +77,7 @@ text-shadow: 2px 2px 4px #000000;
 
 button{
     background-color:   rgb(14, 80, 167);
+    background: linear-gradient(.5turn,  #0E50A7,  rgb(80, 142, 223),   rgb(195, 216, 244), rgb(80, 142, 223), 60%,  #0E50A7);
     align-items: center;
     justify-content: center;
     color: whitesmoke;
