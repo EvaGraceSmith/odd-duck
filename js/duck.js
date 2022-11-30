@@ -38,6 +38,8 @@ function renderDucks(){
   while(duck1 === duck2 || duck3 === duck2){
     duck2 = getRandomNumber();
   }
+
+  // confirm that these products are not duplicates from the immediate previous set.
   image1.src = Ducks.allDucksArray[duck1].src;
   image2.src = Ducks.allDucksArray[duck2].src;
   image3.src = Ducks.allDucksArray[duck3].src;
@@ -153,12 +155,24 @@ new Ducks('The shark', 'img/shark.jpg');
 new Ducks('The sweep', 'img/sweep.png');
 new Ducks('The tauntaun bag', 'img/tauntaun.jpg');
 new Ducks('The unicorn', 'img/unicorn.jpg');
-
+new Ducks('The watering can', 'img/water-can.jpg');
+new Ducks('The wine glass', 'img/wine-glass.jpg');
 
     //add our event listener to run our handleClick()
 ducksContainer.addEventListener('click', handleDucksClick);
 //call all functions
 renderDucks();
+
+
+function handleDucksIconClick(event)
+{
+  let ding = new Audio('duck.mp3');
+  ding.play();
+}
+
+let ducksIcon = document.querySelector('.odd-duck-logo');
+
+ducksIcon.addEventListener('click', handleDucksIconClick);
 
 
 function handleDucksClick(event){
