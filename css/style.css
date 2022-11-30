@@ -118,10 +118,28 @@ width: 1100px;
 color: whitesmoke;
   }
 
-  .voting-photos{
+  .prelude{
 display: flex;
 max-height: 350px;
   }
+
+
+  .prelude div{
+    background-color: white;
+    width: 280px;
+    height: 305px;
+    border: 10px;
+    border-style: solid;
+    border-color: #EAAF00;
+    margin: 20px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    /* visibility: hidden; */
+  }
+
+  .voting-photos{
+    display: flex;
+    max-height: 350px;
+      }
 
   .voting-photos img{
     width: 300px;
@@ -130,7 +148,23 @@ max-height: 350px;
     margin: 20px;
     background-color: #EAAF00;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
-    transition-duration: 0.4s;
+    visibility: hidden;
+  }
+
+  .conclude{
+    display: flex;
+    max-height: 350px;
+      }
+  .conclude div{
+    background-color: white;
+    width: 280px;
+    height: 305px;
+    border: 10px;
+    border-style: solid;
+    border-color: #EAAF00;
+    margin: 20px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
+    visibility: hidden;
   }
 
 img:hover{
