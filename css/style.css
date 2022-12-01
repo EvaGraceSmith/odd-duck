@@ -120,7 +120,6 @@ color: whitesmoke;
 
   .prelude{
 display: flex;
-/* display: none; */
 max-height: 350px;
 z-index:2;
   }
@@ -148,7 +147,6 @@ width: 280px;
 
 
   .voting-photos{
-    display: flex;
     display: none;
     max-height: 350px;
       }
@@ -164,7 +162,6 @@ width: 280px;
 
   .conclude{
     display: none;
-    /* display: flex; */
     max-height: 350px;
     z-index:3; 
       }

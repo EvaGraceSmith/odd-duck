@@ -69,6 +69,8 @@ function renderResults(){
   let ul = document.querySelector('ul');
   renderChart();
   resultButton.textContent='Results';
+  ducksContainer.style.display = 'none';
+  concludeContainer.style.display = 'flex';
 }
 
 // Draw a chart with the duck data.
@@ -131,18 +133,20 @@ function renderChart(){
 
 // Get initial references to HTML elements
 Ducks.allDucksArray = [];
+let preludeContainer = document.querySelector('.prelude');
+let concludeContainer = document.querySelector('.conclude');
 let ducksContainer = document.querySelector('section');
 let textContainer = document.querySelector('aside h2');
 let resultButton = document.querySelector('button');
-let prelude1 = document.querySelector('.prelude div:first-child');
-let prelude2 = document.querySelector('.prelude div:nth-child(2)');
-let prelude3 = document.querySelector('.prelude div:nth-child(3)');
+// let prelude1 = document.querySelector('.prelude div:first-child');
+// let prelude2 = document.querySelector('.prelude div:nth-child(2)');
+// let prelude3 = document.querySelector('.prelude div:nth-child(3)');
 let image1 = document.querySelector('section img:first-child');
 let image2 = document.querySelector('section img:nth-child(2)');
 let image3 = document.querySelector('section img:nth-child(3)');
-let conclude1 = document.querySelector('.conclude div:first-child');
-let conclude2 = document.querySelector('.conclude div:nth-child(2)');
-let conclude3 = document.querySelector('.conclude div:nth-child(3)');
+// let conclude1 = document.querySelector('.conclude div:first-child');
+// let conclude2 = document.querySelector('.conclude div:nth-child(2)');
+// let conclude3 = document.querySelector('.conclude div:nth-child(3)');
 
 
 console.log(ducksContainer, resultButton, image1, image2, image3);
@@ -172,15 +176,23 @@ new Ducks('The watering can', 'img/water-can.jpg');
 new Ducks('The wine glass', 'img/wine-glass.jpg');
 
 //add our event listener to run our handleClick()
+preludeContainer.addEventListener('click', handlePreludeClick);
 ducksContainer.addEventListener('click', handleDucksClick);
-//call all functions
-renderDucks();
+
+// //call all functions
+// renderDucks();
 
 
 function handleDucksIconClick(event)
 {
   let ding = new Audio('duck.mp3');
   ding.play();
+}
+function handlePreludeClick(event) {
+  preludeContainer.style.display = 'none';
+  ducksContainer.style.display = 'flex';
+  renderDucks();
+  alert('please click on a product to begin.');
 }
 
 let ducksIcon = document.querySelector('.odd-duck-logo');
@@ -223,7 +235,7 @@ function handleDucksClick(event){
     resultButton.addEventListener('click', renderResults);
     // ducksContainer.className = 'no-voting';
     resultButton.textContent='View Results';
-// concludeScreen.addEventListener('click', iHaveNoClue,lol. is this renderResults?)
+    // concludeScreen.addEventListener('click', iHaveNoClue,lol. is this renderResults?)
     //I think I need to add the conclude class here  and the confetti?
     // conclude1.addEventListener('click', renderResults);
     // conclude2.addEventListener('click', renderResults);
