@@ -62,15 +62,21 @@ function renderDucks(){
   previousimage3 = duck3;
 }//closes our renderDucks function
 
-
+function afterconfetti()
+{
+  confettiContainer.style.display = "none";
+  concludeContainer.style.display = "flex";
+}
 //function for our render of results to a list
 function renderResults(){
   console.log('In renderResults()');
   let ul = document.querySelector('ul');
   renderChart();
+  window.setTimeout(afterconfetti, 4000);
+  
   resultButton.textContent='Results';
-  ducksContainer.style.display = 'none';
-  concludeContainer.style.display = 'flex';
+  ducksContainer.style.display = "none";
+  confettiContainer.style.display = "flex";
 }
 
 // Draw a chart with the duck data.
@@ -135,19 +141,13 @@ function renderChart(){
 Ducks.allDucksArray = [];
 let preludeContainer = document.querySelector('.prelude');
 let concludeContainer = document.querySelector('.conclude');
-let ducksContainer = document.querySelector('section');
+let confettiContainer = document.querySelector('.confetti');
+let ducksContainer = document.querySelector('.voting-photos');
 let textContainer = document.querySelector('aside h2');
 let resultButton = document.querySelector('button');
-// let prelude1 = document.querySelector('.prelude div:first-child');
-// let prelude2 = document.querySelector('.prelude div:nth-child(2)');
-// let prelude3 = document.querySelector('.prelude div:nth-child(3)');
 let image1 = document.querySelector('section img:first-child');
 let image2 = document.querySelector('section img:nth-child(2)');
 let image3 = document.querySelector('section img:nth-child(3)');
-// let conclude1 = document.querySelector('.conclude div:first-child');
-// let conclude2 = document.querySelector('.conclude div:nth-child(2)');
-// let conclude3 = document.querySelector('.conclude div:nth-child(3)');
-
 
 console.log(ducksContainer, resultButton, image1, image2, image3);
 
@@ -162,7 +162,6 @@ new Ducks('The breakfast maker', 'img/breakfast.jpg');
 new Ducks('The bubblegum', 'img/bubblegum.jpg');
 new Ducks('The chair', 'img/chair.jpg');
 new Ducks('The cthulhu monster', 'img/cthulhu.jpg');
-
 new Ducks('The dog-duck', 'img/dog-duck.jpg');
 new Ducks('The dragon', 'img/dragon.jpg');
 new Ducks('The pen', 'img/pen.jpg');
@@ -178,10 +177,7 @@ new Ducks('The wine glass', 'img/wine-glass.jpg');
 //add our event listener to run our handleClick()
 preludeContainer.addEventListener('click', handlePreludeClick);
 ducksContainer.addEventListener('click', handleDucksClick);
-
-// //call all functions
-// renderDucks();
-
+confettiContainer.style.display = "none";
 
 function handleDucksIconClick(event)
 {
@@ -192,7 +188,6 @@ function handlePreludeClick(event) {
   preludeContainer.style.display = 'none';
   ducksContainer.style.display = 'flex';
   renderDucks();
-  alert('please click on a product to begin.');
 }
 
 let ducksIcon = document.querySelector('.odd-duck-logo');
