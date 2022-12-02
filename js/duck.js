@@ -143,13 +143,43 @@ function renderChart(){
     },
   };
 
+  const dataDoughnut = {
+    labels: duckNames,
+    datasets: [
+  
+      {
+        label: 'Popularity',
+        data: votePercentage,
+        backgroundColor: ['rgb(255, 211, 81)'],
+        borderColor: ['rgb(14, 80, 167)'],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+
+  //configure the graph
+  const configDoughnut = {
+    type: 'doughnut',
+    data:dataDoughnut,
+    options: {
+      scales: {
+        y:{
+          beginAtZero:true,
+        },
+      },
+    },
+  };
+  
   // Get a reference to the Canvas element
   let canvasChart =document.getElementById('myChart');
   //Draw the chart
   const myChart = new Chart (canvasChart, config);
+
+let canvasChart2 =document.getElementById('myChart2');
+//Draw the chart
+const myChart2 = new Chart (canvasChart2, configDoughnut);
 }
-
-
 //  * Initialize the global variables, set up needed event handlers, and
 //  * perform the initial render.
 
