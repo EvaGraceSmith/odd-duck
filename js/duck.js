@@ -1,6 +1,9 @@
 'use strict';
 console.log ('Hello from the js file');
 
+
+
+
 let duckContainer;
 let allDucksArray;
 let clicks = 0;
@@ -8,6 +11,19 @@ let maxClicks =25;
 let previousimage1=1;
 let previousimage2=1;
 let previousimage3=1;
+// Get initial references to HTML elements
+Ducks.allDucksArray = [];
+let preludeContainer = document.querySelector('.prelude');
+let concludeContainer = document.querySelector('.conclude');
+let confettiContainer = document.querySelector('#confetti-canvas');
+let ducksContainer = document.querySelector('.voting-photos');
+let textContainer = document.querySelector('aside h2');
+let resultButton = document.querySelector('button');
+let image1 = document.querySelector('section img:first-child');
+let image2 = document.querySelector('section img:nth-child(2)');
+let image3 = document.querySelector('section img:nth-child(3)');
+
+console.log(ducksContainer, resultButton, image1, image2, image3);
 
 
 
@@ -65,18 +81,17 @@ function renderDucks(){
 function afterconfetti()
 {
   confettiContainer.style.display = "none";
-  concludeContainer.style.display = "flex";
 }
 //function for our render of results to a list
 function renderResults(){
   console.log('In renderResults()');
   let ul = document.querySelector('ul');
   renderChart();
-  window.setTimeout(afterconfetti, 4000);
-  
+  window.setTimeout(afterconfetti, 10000);  
   resultButton.textContent='Results';
   ducksContainer.style.display = "none";
-  confettiContainer.style.display = "flex";
+  concludeContainer.style.display = "flex";
+  confettiContainer.style.display = "";
 }
 
 // Draw a chart with the duck data.
@@ -87,10 +102,12 @@ function renderChart(){
   let duckNames=[];
   let duckLikes=[];
   let duckViews=[];
+  let votePercentage = [];
   for (let i =0; i < Ducks.allDucksArray.length; i++){
     duckNames.push(Ducks.allDucksArray[i].name);
     duckLikes.push(Ducks.allDucksArray[i].click);
     duckViews.push(Ducks.allDucksArray[i].views);
+    votePercentage[i] = Math.floor(100 * (duckLikes[i] / duckViews[i]));
   }
   const data = {
     labels: duckNames,
@@ -137,19 +154,7 @@ function renderChart(){
 //  * perform the initial render.
 
 
-// Get initial references to HTML elements
-Ducks.allDucksArray = [];
-let preludeContainer = document.querySelector('.prelude');
-let concludeContainer = document.querySelector('.conclude');
-let confettiContainer = document.querySelector('.confetti');
-let ducksContainer = document.querySelector('.voting-photos');
-let textContainer = document.querySelector('aside h2');
-let resultButton = document.querySelector('button');
-let image1 = document.querySelector('section img:first-child');
-let image2 = document.querySelector('section img:nth-child(2)');
-let image3 = document.querySelector('section img:nth-child(3)');
 
-console.log(ducksContainer, resultButton, image1, image2, image3);
 
 // An instance of an object can be declared by giving it a unique name that can be used in a program.
 // This process is known as instantiation.
@@ -230,11 +235,7 @@ function handleDucksClick(event){
     resultButton.addEventListener('click', renderResults);
     // ducksContainer.className = 'no-voting';
     resultButton.textContent='View Results';
-    // concludeScreen.addEventListener('click', iHaveNoClue,lol. is this renderResults?)
-    //I think I need to add the conclude class here  and the confetti?
-    // conclude1.addEventListener('click', renderResults);
-    // conclude2.addEventListener('click', renderResults);
-    // conclude3.addEventListener('click', renderResults);
+
 
   } else {
     renderDucks();
