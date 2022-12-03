@@ -217,7 +217,7 @@ function renderChart(){
         // background: [radial-gradient(rgb(80, 142, 223), rgb(195, 216, 244), rgb(80, 142, 223))],
         backgroundColor: ['rgb(14, 80, 167)'],
         borderColor: ['rgb(255, 211, 81)'],
-        borderWidth: 10,
+        borderWidth: 2,
       },
     ],
   };

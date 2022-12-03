@@ -212,3 +212,11 @@ article{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.29);
 
 }
+doughnut-hole{
+    width: 400px;
+    
+}
+.doughnut{
+    height: 400px;
+    width: 400px;
+}
