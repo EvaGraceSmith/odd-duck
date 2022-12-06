@@ -19,9 +19,9 @@ let confettiContainer = document.querySelector('#confetti-canvas');
 let ducksContainer = document.querySelector('.voting-photos');
 let textContainer = document.querySelector('aside h2');
 let resultButton = document.querySelector('button');
-let image1 = document.querySelector('section img:first-child');
-let image2 = document.querySelector('section img:nth-child(2)');
-let image3 = document.querySelector('section img:nth-child(3)');
+let image1 = document.querySelector('.image1 img');
+let image2 = document.querySelector('.image2 img');
+let image3 = document.querySelector('.image3 img');
 
 console.log(ducksContainer, resultButton, image1, image2, image3);
 
@@ -247,11 +247,6 @@ function renderChart(){
   //Draw the chart
   const myChart2 = new Chart (canvasChart2, configDoughnut);
 }
-//  * Initialize the global variables, set up needed event handlers, and
-//  * perform the initial render.
-
-
-
 
 // An instance of an object can be declared by giving it a unique name that can be used in a program.
 // This process is known as instantiation.
@@ -295,7 +290,6 @@ function handleDucksClick(event){
         Ducks.allDucksArray[i].click++;
         let countdown = 25 - clicks;
         textContainer.textContent =`${countdown}`;
-
         break;
       }
     }
