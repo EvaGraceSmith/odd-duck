@@ -216,3 +216,24 @@ footer {
    text-align: center;
    padding-top: 20px;
 }
+
+/* ***************************RESPONSIVE DESIGN************************ */
+@media screen and (min-width: 575px) and (max-width: 750px) {
+    header{font-size: 50px;}
+    p {font-size: 18px;}
+    .prelude div p{font-size: 2em;}
+    .conclude div p{font-size: 2em;}
+    /* #leftsidebar {width: 200px; float: left;}
+    #main {margin-left: 216px;} */
+  }
+
+  @media screen and (max-width:574px) {
+    header{font-size: 40px;}
+    h1{margin-top: 20px; margin-right: 20px;}
+    .sound-icon{margin-left: 20px;}
+    .odd-duck-logo{margin-right: 0px; margin-left: 20px; height: 125px;}
+    p {font-size: 18px;}
+    .prelude{max-height: 200px;}
+    .prelude div p{font-size: 1em;}
+    .conclude div p{font-size: 1em;}
+  }
