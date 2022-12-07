@@ -214,6 +214,13 @@ function renderChart(){
   const configDoughnut = {
     type: 'polarArea',
     data:dataDoughnut,
+    options: {
+      plugins: {
+        legend: {
+          display: false
+        },
+      }
+    }
 
   };
 
