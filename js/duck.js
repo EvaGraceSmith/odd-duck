@@ -103,17 +103,21 @@ function getRandomNumber(){
 
 function renderDucks(){
   let duck1=getRandomNumber();
+  let duck2 = getRandomNumber();
+  let duck3 = getRandomNumber();
+  // This makes sure the first image in the second iteration wasn't in the first iteration
   while (duck1 === previousimage1 || duck1 === previousimage2 || duck1 === previousimage3) {
     duck1 = getRandomNumber();
   }
-  let duck2 = getRandomNumber();
-  let duck3 = getRandomNumber();
+
   // console.log(duck1,duck2,duck3);
-  while(duck1 === duck3|| duck3 === previousimage2 || duck3 === previousimage3){
-    duck3 = getRandomNumber();
-  }
-  while(duck1 === duck2 || duck3 === duck2){
+  //This makes sure the second image doesn't match the first iteration, as well as not matching its peers in this iteration
+  while(duck1 === duck2|| duck2 === previousimage1 || duck2 === previousimage2 || duck2 === previousimage3){
     duck2 = getRandomNumber();
+  }
+  //This makes sure the third image doesn't match the first iteration, as well as not matching its peers in this iteration
+  while(duck1 === duck3 || duck3 === duck2 || duck3 === previousimage1 || duck3 === previousimage2 || duck3 === previousimage3){
+    duck3 = getRandomNumber();
   }
 
   // confirm that these products are not duplicates from the immediate previous set.
