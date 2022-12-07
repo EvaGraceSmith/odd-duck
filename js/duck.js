@@ -2,15 +2,12 @@
 console.log ('Hello from the js file');
 
 
-
-
-let duckContainer;
-let allDucksArray;
 let clicks = 0;
 let maxClicks =25;
 let previousimage1=1;
 let previousimage2=1;
 let previousimage3=1;
+
 // Get initial references to HTML elements
 Ducks.allDucksArray = [];
 let preludeContainer = document.querySelector('.prelude');
@@ -24,7 +21,6 @@ let image2 = document.querySelector('.image2 img');
 let image3 = document.querySelector('.image3 img');
 
 console.log(ducksContainer, resultButton, image1, image2, image3);
-
 
 
 function Ducks(name, src, views, click){
@@ -45,21 +41,21 @@ function Ducks(name, src, views, click){
   //   As we create new instances of our duck objects we can push those into array using the 'this' and the .push()
   // built in array method
   Ducks.allDucksArray.push(this);
-
 }
+
 
 
 //we need a way to get stuff back from local storage add to our original objects and then render all rounds to vote again.
 let savedDucksString = localStorage.getItem('savedDucks');
 console.log('Duck strings',savedDucksString);
-//getItem from local storage
 
+
+//getItem from local storage
 // send those through our constructor function
 if(savedDucksString){
   let arrayOfNotDucksObject = JSON.parse(savedDucksString);
   console.log('objects that dont know they are Ducks?', arrayOfNotDucksObject);
   //once we have object we are going to run them through our constructor function so that they are Ducks objects.
-
   for(let i = 0; i < arrayOfNotDucksObject.length; i++){
     new Ducks(
       arrayOfNotDucksObject[i].name,
@@ -68,10 +64,9 @@ if(savedDucksString){
       arrayOfNotDucksObject[i].click
     );
   }
-  console.log('sssssss',Ducks.allDuckssArray);
+  console.log('Look! These are duck object: ',Ducks.allDuckssArray);
 } else {
 //calling the constructor function
-
   new Ducks('The luggage', 'img/bag.jpg');
   new Ducks('The banana', 'img/banana.jpg');
   new Ducks('The bathroom stand', 'img/bathroom.jpg');
@@ -91,11 +86,7 @@ if(savedDucksString){
   new Ducks('The unicorn', 'img/unicorn.jpg');
   new Ducks('The watering can', 'img/water-can.jpg');
   new Ducks('The wine glass', 'img/wine-glass.jpg');
-
 }
-
-
-
 
 function getRandomNumber(){
   return Math.floor(Math.random() * Ducks.allDucksArray.length);
@@ -105,16 +96,17 @@ function renderDucks(){
   let duck1=getRandomNumber();
   let duck2 = getRandomNumber();
   let duck3 = getRandomNumber();
+
   // This makes sure the first image in the second iteration wasn't in the first iteration
   while (duck1 === previousimage1 || duck1 === previousimage2 || duck1 === previousimage3) {
     duck1 = getRandomNumber();
   }
 
-  // console.log(duck1,duck2,duck3);
   //This makes sure the second image doesn't match the first iteration, as well as not matching its peers in this iteration
   while(duck1 === duck2|| duck2 === previousimage1 || duck2 === previousimage2 || duck2 === previousimage3){
     duck2 = getRandomNumber();
   }
+
   //This makes sure the third image doesn't match the first iteration, as well as not matching its peers in this iteration
   while(duck1 === duck3 || duck3 === duck2 || duck3 === previousimage1 || duck3 === previousimage2 || duck3 === previousimage3){
     duck3 = getRandomNumber();
@@ -138,14 +130,15 @@ function renderDucks(){
   previousimage3 = duck3;
 }//closes our renderDucks function
 
+//Ooo! Let's add some confetti to make coding more fun!
 function afterconfetti()
 {
   confettiContainer.style.display = 'none';
 }
-//function for our render of results to a list
+
+
+
 function renderResults(){
-  console.log('In renderResults()');
-  let ul = document.querySelector('ul');
   renderChart();
   window.setTimeout(afterconfetti, 10000);
   resultButton.textContent='Results';
@@ -155,9 +148,7 @@ function renderResults(){
 }
 
 // Draw a chart with the duck data.
-
 function renderChart(){
-  console.log('In renderChart()');
   // Divide duck values into separate arrays to be used in the chart
   let duckNames=[];
   let duckLikes=[];
@@ -189,7 +180,6 @@ function renderChart(){
     ],
   };
 
-
   //configure the graph
   const config = {
     type: 'bar',
@@ -203,17 +193,10 @@ function renderChart(){
     },
   };
 
-  //   let gradient = ctx.createLinearGradient(0, 0, 0, 450);
-  //   gradient.addColorStop(0, 'rgba(14, 80, 167, 0.5)');
-  //   g\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ient.addColorStop(0.5, 'rgba(14, 80, 167, 0.25)');
-  //   gradient.addColorStop(1, 'rgba(14, 80, 167, 0)');
-
-
 
   const dataDoughnut = {
     labels: duckNames,
     datasets: [
-
       {
         label: 'Popularity',
         data: votePercentage,
@@ -227,19 +210,11 @@ function renderChart(){
   };
 
 
-
-
-  //configure the graph
+  //configure the Doughnut graph
   const configDoughnut = {
-    type: 'doughnut',
+    type: 'polarArea',
     data:dataDoughnut,
-    options: {
-      scales: {
-        y:{
-          beginAtZero:true,
-        },
-      },
-    },
+
   };
 
   // Get a reference to the Canvas element
